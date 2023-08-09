@@ -1,0 +1,233 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TacotitoDosModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="Celular" Type="nvarchar" MaxLength="20" />
+    <Property Name="Direccion" Type="nvarchar" MaxLength="200" />
+    <Property Name="Email" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Ingrediente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="50" />
+    <Property Name="TipoIngredienteID" Type="int" />
+    <Property Name="Descripcion" Type="nvarchar" MaxLength="100" />
+    <Property Name="Precio" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="CantidadMaxima" Type="int" />
+  </EntityType>
+  <EntityType Name="MedioDePago">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MedioDePago" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="MedioEnvio">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="NombreChofer" Type="nvarchar" MaxLength="50" />
+    <Property Name="CelularChofer" Type="nvarchar" MaxLength="20" />
+    <Property Name="TipoVehiculoID" Type="int" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ClienteID" Type="int" />
+    <Property Name="MedioEnvioID" Type="int" />
+    <Property Name="MedioDePagoID" Type="int" />
+    <Property Name="Fecha_Hora" Type="datetime" />
+    <Property Name="ImporteTotal" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="Entregado" Type="bit" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Taco">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TortillaDoble" Type="bit" />
+  </EntityType>
+  <EntityType Name="TacoIngrediente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TacoID" Type="int" />
+    <Property Name="IngredienteID" Type="int" />
+    <Property Name="PedidoID" Type="int" />
+  </EntityType>
+  <EntityType Name="TipoIngrediente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoIngrediente" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="TipoVehiculo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="TipoVehiculo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Patente" Type="nvarchar" MaxLength="20" />
+  </EntityType>
+  <Association Name="FK__Ingredien__TipoI__3B75D760">
+    <End Role="TipoIngrediente" Type="Self.TipoIngrediente" Multiplicity="0..1" />
+    <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoIngrediente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ingrediente">
+        <PropertyRef Name="TipoIngredienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedioEnvi__TipoV__403A8C7D">
+    <End Role="TipoVehiculo" Type="Self.TipoVehiculo" Multiplicity="0..1" />
+    <End Role="MedioEnvio" Type="Self.MedioEnvio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVehiculo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedioEnvio">
+        <PropertyRef Name="TipoVehiculoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__ClienteI__46E78A0C">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="ClienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__MedioDeP__48CFD27E">
+    <End Role="MedioDePago" Type="Self.MedioDePago" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedioDePago">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="MedioDePagoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__MedioEnv__47DBAE45">
+    <End Role="MedioEnvio" Type="Self.MedioEnvio" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedioEnvio">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="MedioEnvioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TacoIngre__Ingre__4CA06362">
+    <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="0..1" />
+    <End Role="TacoIngrediente" Type="Self.TacoIngrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingrediente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TacoIngrediente">
+        <PropertyRef Name="IngredienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TacoIngre__Pedid__4D94879B">
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="0..1" />
+    <End Role="TacoIngrediente" Type="Self.TacoIngrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TacoIngrediente">
+        <PropertyRef Name="PedidoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TacoIngre__TacoI__4BAC3F29">
+    <End Role="Taco" Type="Self.Taco" Multiplicity="0..1" />
+    <End Role="TacoIngrediente" Type="Self.TacoIngrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taco">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TacoIngrediente">
+        <PropertyRef Name="TacoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TacotitoDosModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Ingrediente" EntityType="Self.Ingrediente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedioDePago" EntityType="Self.MedioDePago" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MedioEnvio" EntityType="Self.MedioEnvio" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Pedido" EntityType="Self.Pedido" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Taco" EntityType="Self.Taco" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TacoIngrediente" EntityType="Self.TacoIngrediente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoIngrediente" EntityType="Self.TipoIngrediente" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TipoVehiculo" EntityType="Self.TipoVehiculo" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Ingredien__TipoI__3B75D760" Association="Self.FK__Ingredien__TipoI__3B75D760">
+      <End Role="TipoIngrediente" EntitySet="TipoIngrediente" />
+      <End Role="Ingrediente" EntitySet="Ingrediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedioEnvi__TipoV__403A8C7D" Association="Self.FK__MedioEnvi__TipoV__403A8C7D">
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculo" />
+      <End Role="MedioEnvio" EntitySet="MedioEnvio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__ClienteI__46E78A0C" Association="Self.FK__Pedido__ClienteI__46E78A0C">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__MedioDeP__48CFD27E" Association="Self.FK__Pedido__MedioDeP__48CFD27E">
+      <End Role="MedioDePago" EntitySet="MedioDePago" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__MedioEnv__47DBAE45" Association="Self.FK__Pedido__MedioEnv__47DBAE45">
+      <End Role="MedioEnvio" EntitySet="MedioEnvio" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TacoIngre__Ingre__4CA06362" Association="Self.FK__TacoIngre__Ingre__4CA06362">
+      <End Role="Ingrediente" EntitySet="Ingrediente" />
+      <End Role="TacoIngrediente" EntitySet="TacoIngrediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TacoIngre__Pedid__4D94879B" Association="Self.FK__TacoIngre__Pedid__4D94879B">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="TacoIngrediente" EntitySet="TacoIngrediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TacoIngre__TacoI__4BAC3F29" Association="Self.FK__TacoIngre__TacoI__4BAC3F29">
+      <End Role="Taco" EntitySet="Taco" />
+      <End Role="TacoIngrediente" EntitySet="TacoIngrediente" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

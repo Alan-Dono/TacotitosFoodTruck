@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TacotitoDosModelStoreContainer" CdmEntityContainer="TacotitoDosEntities">
+    <EntitySetMapping Name="Cliente">
+      <EntityTypeMapping TypeName="TacotitoDosModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Direccion" ColumnName="Direccion" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ingrediente">
+      <EntityTypeMapping TypeName="TacotitoDosModel.Ingrediente">
+        <MappingFragment StoreEntitySet="Ingrediente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="TipoIngredienteID" ColumnName="TipoIngredienteID" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="CantidadMaxima" ColumnName="CantidadMaxima" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedioDePago">
+      <EntityTypeMapping TypeName="TacotitoDosModel.MedioDePago">
+        <MappingFragment StoreEntitySet="MedioDePago">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="MedioDePago1" ColumnName="MedioDePago" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MedioEnvio">
+      <EntityTypeMapping TypeName="TacotitoDosModel.MedioEnvio">
+        <MappingFragment StoreEntitySet="MedioEnvio">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="NombreChofer" ColumnName="NombreChofer" />
+          <ScalarProperty Name="CelularChofer" ColumnName="CelularChofer" />
+          <ScalarProperty Name="TipoVehiculoID" ColumnName="TipoVehiculoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pedido">
+      <EntityTypeMapping TypeName="TacotitoDosModel.Pedido">
+        <MappingFragment StoreEntitySet="Pedido">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ClienteID" ColumnName="ClienteID" />
+          <ScalarProperty Name="MedioEnvioID" ColumnName="MedioEnvioID" />
+          <ScalarProperty Name="MedioDePagoID" ColumnName="MedioDePagoID" />
+          <ScalarProperty Name="Fecha_Hora" ColumnName="Fecha_Hora" />
+          <ScalarProperty Name="ImporteTotal" ColumnName="ImporteTotal" />
+          <ScalarProperty Name="Entregado" ColumnName="Entregado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TacotitoDosModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Taco">
+      <EntityTypeMapping TypeName="TacotitoDosModel.Taco">
+        <MappingFragment StoreEntitySet="Taco">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TortillaDoble" ColumnName="TortillaDoble" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TacoIngrediente">
+      <EntityTypeMapping TypeName="TacotitoDosModel.TacoIngrediente">
+        <MappingFragment StoreEntitySet="TacoIngrediente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TacoID" ColumnName="TacoID" />
+          <ScalarProperty Name="IngredienteID" ColumnName="IngredienteID" />
+          <ScalarProperty Name="PedidoID" ColumnName="PedidoID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoIngrediente">
+      <EntityTypeMapping TypeName="TacotitoDosModel.TipoIngrediente">
+        <MappingFragment StoreEntitySet="TipoIngrediente">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TipoIngrediente1" ColumnName="TipoIngrediente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TipoVehiculo">
+      <EntityTypeMapping TypeName="TacotitoDosModel.TipoVehiculo">
+        <MappingFragment StoreEntitySet="TipoVehiculo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="TipoVehiculo1" ColumnName="TipoVehiculo" />
+          <ScalarProperty Name="Patente" ColumnName="Patente" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

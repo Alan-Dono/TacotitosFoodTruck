@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TacotitoDosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Celular" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="Email" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__ClienteI__46E78A0C" FromRole="Cliente" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Ingrediente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nombre" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="TipoIngredienteID" Type="Int32" />
+    <Property Name="Descripcion" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Precio" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="CantidadMaxima" Type="Int32" />
+    <NavigationProperty Name="TipoIngrediente" Relationship="Self.FK__Ingredien__TipoI__3B75D760" FromRole="Ingrediente" ToRole="TipoIngrediente" />
+    <NavigationProperty Name="TacoIngrediente" Relationship="Self.FK__TacoIngre__Ingre__4CA06362" FromRole="Ingrediente" ToRole="TacoIngrediente" />
+  </EntityType>
+  <EntityType Name="MedioDePago">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="MedioDePago1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__MedioDeP__48CFD27E" FromRole="MedioDePago" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="MedioEnvio">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="NombreChofer" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="CelularChofer" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TipoVehiculoID" Type="Int32" />
+    <NavigationProperty Name="TipoVehiculo" Relationship="Self.FK__MedioEnvi__TipoV__403A8C7D" FromRole="MedioEnvio" ToRole="TipoVehiculo" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK__Pedido__MedioEnv__47DBAE45" FromRole="MedioEnvio" ToRole="Pedido" />
+  </EntityType>
+  <EntityType Name="Pedido">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ClienteID" Type="Int32" />
+    <Property Name="MedioEnvioID" Type="Int32" />
+    <Property Name="MedioDePagoID" Type="Int32" />
+    <Property Name="Fecha_Hora" Type="DateTime" Precision="3" />
+    <Property Name="ImporteTotal" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="Entregado" Type="Boolean" />
+    <NavigationProperty Name="Cliente" Relationship="Self.FK__Pedido__ClienteI__46E78A0C" FromRole="Pedido" ToRole="Cliente" />
+    <NavigationProperty Name="MedioDePago" Relationship="Self.FK__Pedido__MedioDeP__48CFD27E" FromRole="Pedido" ToRole="MedioDePago" />
+    <NavigationProperty Name="MedioEnvio" Relationship="Self.FK__Pedido__MedioEnv__47DBAE45" FromRole="Pedido" ToRole="MedioEnvio" />
+    <NavigationProperty Name="TacoIngrediente" Relationship="Self.FK__TacoIngre__Pedid__4D94879B" FromRole="Pedido" ToRole="TacoIngrediente" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Taco">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TortillaDoble" Type="Boolean" />
+    <NavigationProperty Name="TacoIngrediente" Relationship="Self.FK__TacoIngre__TacoI__4BAC3F29" FromRole="Taco" ToRole="TacoIngrediente" />
+  </EntityType>
+  <EntityType Name="TacoIngrediente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TacoID" Type="Int32" />
+    <Property Name="IngredienteID" Type="Int32" />
+    <Property Name="PedidoID" Type="Int32" />
+    <NavigationProperty Name="Ingrediente" Relationship="Self.FK__TacoIngre__Ingre__4CA06362" FromRole="TacoIngrediente" ToRole="Ingrediente" />
+    <NavigationProperty Name="Pedido" Relationship="Self.FK__TacoIngre__Pedid__4D94879B" FromRole="TacoIngrediente" ToRole="Pedido" />
+    <NavigationProperty Name="Taco" Relationship="Self.FK__TacoIngre__TacoI__4BAC3F29" FromRole="TacoIngrediente" ToRole="Taco" />
+  </EntityType>
+  <EntityType Name="TipoIngrediente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoIngrediente1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Ingrediente" Relationship="Self.FK__Ingredien__TipoI__3B75D760" FromRole="TipoIngrediente" ToRole="Ingrediente" />
+  </EntityType>
+  <EntityType Name="TipoVehiculo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="TipoVehiculo1" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Patente" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="MedioEnvio" Relationship="Self.FK__MedioEnvi__TipoV__403A8C7D" FromRole="TipoVehiculo" ToRole="MedioEnvio" />
+  </EntityType>
+  <Association Name="FK__Pedido__ClienteI__46E78A0C">
+    <End Role="Cliente" Type="Self.Cliente" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cliente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="ClienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Ingredien__TipoI__3B75D760">
+    <End Role="TipoIngrediente" Type="Self.TipoIngrediente" Multiplicity="0..1" />
+    <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoIngrediente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Ingrediente">
+        <PropertyRef Name="TipoIngredienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TacoIngre__Ingre__4CA06362">
+    <End Role="Ingrediente" Type="Self.Ingrediente" Multiplicity="0..1" />
+    <End Role="TacoIngrediente" Type="Self.TacoIngrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Ingrediente">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TacoIngrediente">
+        <PropertyRef Name="IngredienteID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__MedioDeP__48CFD27E">
+    <End Role="MedioDePago" Type="Self.MedioDePago" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedioDePago">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="MedioDePagoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__MedioEnvi__TipoV__403A8C7D">
+    <End Role="TipoVehiculo" Type="Self.TipoVehiculo" Multiplicity="0..1" />
+    <End Role="MedioEnvio" Type="Self.MedioEnvio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TipoVehiculo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="MedioEnvio">
+        <PropertyRef Name="TipoVehiculoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Pedido__MedioEnv__47DBAE45">
+    <End Role="MedioEnvio" Type="Self.MedioEnvio" Multiplicity="0..1" />
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="MedioEnvio">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pedido">
+        <PropertyRef Name="MedioEnvioID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TacoIngre__Pedid__4D94879B">
+    <End Role="Pedido" Type="Self.Pedido" Multiplicity="0..1" />
+    <End Role="TacoIngrediente" Type="Self.TacoIngrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pedido">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TacoIngrediente">
+        <PropertyRef Name="PedidoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__TacoIngre__TacoI__4BAC3F29">
+    <End Role="Taco" Type="Self.Taco" Multiplicity="0..1" />
+    <End Role="TacoIngrediente" Type="Self.TacoIngrediente" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Taco">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TacoIngrediente">
+        <PropertyRef Name="TacoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="TacotitoDosEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+    <EntitySet Name="Ingrediente" EntityType="Self.Ingrediente" />
+    <EntitySet Name="MedioDePago" EntityType="Self.MedioDePago" />
+    <EntitySet Name="MedioEnvio" EntityType="Self.MedioEnvio" />
+    <EntitySet Name="Pedido" EntityType="Self.Pedido" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Taco" EntityType="Self.Taco" />
+    <EntitySet Name="TacoIngrediente" EntityType="Self.TacoIngrediente" />
+    <EntitySet Name="TipoIngrediente" EntityType="Self.TipoIngrediente" />
+    <EntitySet Name="TipoVehiculo" EntityType="Self.TipoVehiculo" />
+    <AssociationSet Name="FK__Pedido__ClienteI__46E78A0C" Association="Self.FK__Pedido__ClienteI__46E78A0C">
+      <End Role="Cliente" EntitySet="Cliente" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Ingredien__TipoI__3B75D760" Association="Self.FK__Ingredien__TipoI__3B75D760">
+      <End Role="TipoIngrediente" EntitySet="TipoIngrediente" />
+      <End Role="Ingrediente" EntitySet="Ingrediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TacoIngre__Ingre__4CA06362" Association="Self.FK__TacoIngre__Ingre__4CA06362">
+      <End Role="Ingrediente" EntitySet="Ingrediente" />
+      <End Role="TacoIngrediente" EntitySet="TacoIngrediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__MedioDeP__48CFD27E" Association="Self.FK__Pedido__MedioDeP__48CFD27E">
+      <End Role="MedioDePago" EntitySet="MedioDePago" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__MedioEnvi__TipoV__403A8C7D" Association="Self.FK__MedioEnvi__TipoV__403A8C7D">
+      <End Role="TipoVehiculo" EntitySet="TipoVehiculo" />
+      <End Role="MedioEnvio" EntitySet="MedioEnvio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Pedido__MedioEnv__47DBAE45" Association="Self.FK__Pedido__MedioEnv__47DBAE45">
+      <End Role="MedioEnvio" EntitySet="MedioEnvio" />
+      <End Role="Pedido" EntitySet="Pedido" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TacoIngre__Pedid__4D94879B" Association="Self.FK__TacoIngre__Pedid__4D94879B">
+      <End Role="Pedido" EntitySet="Pedido" />
+      <End Role="TacoIngrediente" EntitySet="TacoIngrediente" />
+    </AssociationSet>
+    <AssociationSet Name="FK__TacoIngre__TacoI__4BAC3F29" Association="Self.FK__TacoIngre__TacoI__4BAC3F29">
+      <End Role="Taco" EntitySet="Taco" />
+      <End Role="TacoIngrediente" EntitySet="TacoIngrediente" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
