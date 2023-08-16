@@ -214,6 +214,7 @@
             this.btnPedidos.TabIndex = 2;
             this.btnPedidos.Text = "Pedidos";
             this.btnPedidos.UseVisualStyleBackColor = false;
+            this.btnPedidos.Click += new System.EventHandler(this.btnPedidos_Click);
             // 
             // btnSalsa
             // 
@@ -272,6 +273,7 @@
             this.btnTortillas.TabIndex = 5;
             this.btnTortillas.Text = "Tortillas";
             this.btnTortillas.UseVisualStyleBackColor = false;
+            this.btnTortillas.Click += new System.EventHandler(this.btnTortillas_Click);
             // 
             // panel6
             // 
@@ -305,6 +307,7 @@
             this.btnIngredientes.TabIndex = 4;
             this.btnIngredientes.Text = "Ingredientes";
             this.btnIngredientes.UseVisualStyleBackColor = false;
+            this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
             // panel5
             // 
@@ -393,6 +396,7 @@
             this.iconPictureBox1.Size = new System.Drawing.Size(239, 145);
             this.iconPictureBox1.TabIndex = 1;
             this.iconPictureBox1.TabStop = false;
+            this.iconPictureBox1.Click += new System.EventHandler(this.iconPictureBox1_Click);
             // 
             // pictureBox1
             // 
@@ -413,8 +417,7 @@
             this.PanelPrincipal.Name = "PanelPrincipal";
             this.PanelPrincipal.Size = new System.Drawing.Size(961, 650);
             this.PanelPrincipal.TabIndex = 2;
-            this.PanelPrincipal.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelPrincipal_Paint);
-            // 
+          // 
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
@@ -428,7 +431,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FrmPrincipal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmPrincipal";
+            this.Text = " ";
             this.Load += new System.EventHandler(this.FrmPrincipal_Load);
             this.panelTitle.ResumeLayout(false);
             this.panelLateral.ResumeLayout(false);

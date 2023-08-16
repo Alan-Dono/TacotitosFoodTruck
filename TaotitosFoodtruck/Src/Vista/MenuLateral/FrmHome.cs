@@ -12,7 +12,16 @@ namespace TaotitosFoodtruck.Src.Vista
 {
     public partial class FrmHome : Form
     {
-        public FrmHome()
+        private static FrmHome instance;
+        public static FrmHome GetInstancia()
+        {
+            if (instance == null)
+            {
+                instance = new FrmHome();
+            }
+            return instance;
+        }
+        private FrmHome()
         {
             InitializeComponent();
         }

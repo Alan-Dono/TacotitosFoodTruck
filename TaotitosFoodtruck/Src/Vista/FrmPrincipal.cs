@@ -8,21 +8,38 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
+using TaotitosFoodtruck.Src.Vista.MenuLateral;
+using TaotitosFoodtruck.Src.Controladora;
 
 namespace TaotitosFoodtruck.Src.Vista
 {
     public partial class FrmPrincipal : Form
-    {
-        public FrmPrincipal()
+    {       
+        private ControladoraFrm formController = ControladoraFrm.GetInstance();
+        private static FrmPrincipal instance;
+        public static FrmPrincipal GetInstance()
+        {
+            if (instance == null)
+            {
+                instance = new FrmPrincipal();
+            }
+            return instance;
+        }
+        private FrmPrincipal()
         {
             InitializeComponent();
+
+        }
+        public Panel PanelContenedor
+        {
+            get { return PanelPrincipal; }
         }
         private void FrmPrincipal_Load(object sender, EventArgs e)
         {
-
+            iconPictureBox1_Click(null, e);
         }
         #region VenanasEmergentes
-        private void AbrirFormHijo(object frmHijo)
+     /*   public void AbrirFormHijo(object frmHijo)
         {
             if(this.PanelPrincipal.Controls.Count > 0)
             {
@@ -34,8 +51,9 @@ namespace TaotitosFoodtruck.Src.Vista
             this.PanelPrincipal.Controls.Add(hijo);
             this.PanelPrincipal.Tag = hijo;
             hijo.Show();
-        }
+        }*/
         #endregion
+
         #region BotenesVentana
         private void bntCerrar_Click(object sender, EventArgs e)
         {
@@ -76,14 +94,38 @@ namespace TaotitosFoodtruck.Src.Vista
         }
         #endregion
 
+        #region BotonesMenu
         private void btnSalsa_Click(object sender, EventArgs e)
         {
-            AbrirFormHijo(new FrmSalsas());
+            formController.AbrirFormHijo(FrmSalsas.GetInstancia(), PanelContenedor);
+            //formController.AbriFormHijo(FrmSalsas.GetInstancia());
         }
 
-        private void PanelPrincipal_Paint(object sender, PaintEventArgs e)
+        private void iconPictureBox1_Click(object sender, EventArgs e)
         {
+            formController.AbrirFormHijo(FrmHome.GetInstancia(), PanelContenedor);
+            //formController.AbriFormHijo(FrmHome.GetInstancia());
+        }
+
+        private void btnTortillas_Click(object sender, EventArgs e)
+        {
+            formController.AbrirFormHijo(FrmTortillas.GetInstancia(), PanelContenedor);
+            //formController.AbriFormHijo(FrmTortillas.GetInstancia());
+        }
+
+        private void btnIngredientes_Click(object sender, EventArgs e)
+        {
+            formController.AbrirFormHijo(FrmIngredientes.GetInstancia(), PanelContenedor);
+            //formController.AbriFormHijo(FrmIngredientes.GetInstancia());
+        }
+
+        private void btnPedidos_Click(object sender, EventArgs e)
+        {
+            //formController.AbriFormHijo(FrmPedido.GetInstancia());
+            formController.AbrirFormHijo(FrmPedido.GetInstancia(), PanelContenedor);
 
         }
+        #endregion
+
     }
 }

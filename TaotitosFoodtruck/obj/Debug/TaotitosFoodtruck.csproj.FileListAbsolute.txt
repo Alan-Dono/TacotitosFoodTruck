@@ -17,3 +17,9 @@ C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\T
 C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\bin\Debug\FontAwesome.Sharp.dll
 C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.FrmSalsas.resources
 C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.FrmHome.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.FrmTortillas.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.FrmIngredientes.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.MenuLateral.FrmPedido.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.TomarPedido.FrmPedidoIngrediente.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.TomarPedido.FrmPedidoTortillo.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.TomarPedido.FrmPedidoSalsa.resources

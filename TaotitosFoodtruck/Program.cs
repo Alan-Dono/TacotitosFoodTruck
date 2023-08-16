@@ -17,7 +17,7 @@ namespace TaotitosFoodtruck
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FrmPrincipal());
+            Application.Run(FrmPrincipal.GetInstance());
         }
     }
 }
