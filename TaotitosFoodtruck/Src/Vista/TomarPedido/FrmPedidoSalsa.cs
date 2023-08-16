@@ -36,7 +36,7 @@ namespace TaotitosFoodtruck.Src.Vista.TomarPedido
         }
         private void RefrescarSalsas()
         {
-            ingredienteController.ListaIngredientes(3, dgvSalsa);
+            ingredienteController.llenarDgv(dgvSalsa, 3);
         }
     }
 }

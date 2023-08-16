@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaotitosFoodtruck.Src.Modelo;
 using TaotitosFoodtruck.Src.Controladora;
+using TaotitosFoodtruck.Src.Modelo.ClasesConcretas;
 
 
 namespace TaotitosFoodtruck.Src.Vista
@@ -36,9 +37,9 @@ namespace TaotitosFoodtruck.Src.Vista
         }
         private void RefrescarTablaSalsa()
         {
-            //dgvSalsa.AllowUserToAddRows = false;
-            ingredienteController.ListaIngredientes(3,dgvSalsa);
+            ingredienteController.llenarDgv(dgvSalsa, 3);
         }
+
 
        
     }

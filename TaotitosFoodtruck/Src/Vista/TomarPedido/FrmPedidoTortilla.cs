@@ -46,7 +46,7 @@ namespace TaotitosFoodtruck.Src.Vista.TomarPedido
 
         private void RefrescarTortillas()
         {
-            ingredienteController.ListaIngredientes(1, dgvPedidoTortilla);
+            ingredienteController.llenarDgv(dgvPedidoTortilla, 1);
         }
     }
 }

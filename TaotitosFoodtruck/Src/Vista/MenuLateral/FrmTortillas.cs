@@ -35,8 +35,7 @@ namespace TaotitosFoodtruck.Src.Vista
         }
         private void RefrescarTablaTortillas()
         {
-            //dgvTortilla.AllowUserToAddRows = false;
-            ingredienteController.ListaIngredientes(1, dgvTortilla);
+            ingredienteController.llenarDgv(dgvTortilla, 1);
         }
 
    

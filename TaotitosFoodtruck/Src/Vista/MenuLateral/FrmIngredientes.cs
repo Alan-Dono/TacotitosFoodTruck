@@ -37,12 +37,7 @@ namespace TaotitosFoodtruck.Src.Vista
         }
         private void RefrescarTablaAlimentos()
         {
-           /* foreach(Ingrediente in ingredienteController.ListaIngredientes(2))
-            {
-                
-            }*/
-            //dgvTortilla.AllowUserToAddRows = false;
-            ingredienteController.ListaIngredientes(2, dgvTortilla);
+            ingredienteController.llenarDgv(dgvTortilla,2);
         }
     }
 }
