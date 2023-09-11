@@ -29,7 +29,9 @@ namespace TaotitosFoodtruck.Src.Vista.TomarPedido
         {
             InitializeComponent();
             RefrescarIngredientes();
+            dgvTortilla.SelectionChanged += dgvTortilla_SelectionChanged_1;
         }
+
 
         private void btnAlimentoSiguiente_Click(object sender, EventArgs e)
         {
@@ -43,6 +45,16 @@ namespace TaotitosFoodtruck.Src.Vista.TomarPedido
         private void RefrescarIngredientes()
         {
             ingredienteController.llenarDgv(dgvTortilla, 2);
+        }
+
+        private void FrmPedidoIngrediente_Load(object sender, EventArgs e)
+        {
+            dgvTortilla.ClearSelection();
+        }
+
+        private void dgvTortilla_SelectionChanged_1(object sender, EventArgs e)
+        {
+            pbSalsa.Value = 50;
         }
     }
 }

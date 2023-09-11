@@ -33,17 +33,17 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
+            this.dgvTortilla = new System.Windows.Forms.DataGridView();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.btnNuevoAlimento = new FontAwesome.Sharp.IconButton();
             this.btnEliminarAlimento = new FontAwesome.Sharp.IconButton();
             this.btnModificarAlimento = new FontAwesome.Sharp.IconButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.dgvTortilla = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
@@ -73,93 +73,6 @@
             this.splitContainer1.Size = new System.Drawing.Size(961, 650);
             this.splitContainer1.SplitterDistance = 543;
             this.splitContainer1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(65, 75);
-            this.panel2.Margin = new System.Windows.Forms.Padding(0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(227, 5);
-            this.panel2.TabIndex = 14;
-            // 
-            // panel4
-            // 
-            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(668, 75);
-            this.panel4.Margin = new System.Windows.Forms.Padding(0);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(227, 5);
-            this.panel4.TabIndex = 18;
-            // 
-            // btnNuevoAlimento
-            // 
-            this.btnNuevoAlimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(62)))), ((int)(((byte)(50)))));
-            this.btnNuevoAlimento.FlatAppearance.BorderSize = 0;
-            this.btnNuevoAlimento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnNuevoAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnNuevoAlimento.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnNuevoAlimento.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
-            this.btnNuevoAlimento.IconColor = System.Drawing.Color.Black;
-            this.btnNuevoAlimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnNuevoAlimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNuevoAlimento.Location = new System.Drawing.Point(65, 23);
-            this.btnNuevoAlimento.Margin = new System.Windows.Forms.Padding(0);
-            this.btnNuevoAlimento.Name = "btnNuevoAlimento";
-            this.btnNuevoAlimento.Padding = new System.Windows.Forms.Padding(15, 8, 0, 0);
-            this.btnNuevoAlimento.Size = new System.Drawing.Size(227, 52);
-            this.btnNuevoAlimento.TabIndex = 13;
-            this.btnNuevoAlimento.Text = "Nuevo";
-            this.btnNuevoAlimento.UseVisualStyleBackColor = false;
-            // 
-            // btnEliminarAlimento
-            // 
-            this.btnEliminarAlimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(62)))), ((int)(((byte)(50)))));
-            this.btnEliminarAlimento.FlatAppearance.BorderSize = 0;
-            this.btnEliminarAlimento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnEliminarAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEliminarAlimento.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEliminarAlimento.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
-            this.btnEliminarAlimento.IconColor = System.Drawing.Color.Black;
-            this.btnEliminarAlimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnEliminarAlimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEliminarAlimento.Location = new System.Drawing.Point(668, 23);
-            this.btnEliminarAlimento.Margin = new System.Windows.Forms.Padding(0);
-            this.btnEliminarAlimento.Name = "btnEliminarAlimento";
-            this.btnEliminarAlimento.Padding = new System.Windows.Forms.Padding(15, 8, 0, 0);
-            this.btnEliminarAlimento.Size = new System.Drawing.Size(227, 52);
-            this.btnEliminarAlimento.TabIndex = 17;
-            this.btnEliminarAlimento.Text = "Eliminar";
-            this.btnEliminarAlimento.UseVisualStyleBackColor = false;
-            // 
-            // btnModificarAlimento
-            // 
-            this.btnModificarAlimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(62)))), ((int)(((byte)(50)))));
-            this.btnModificarAlimento.FlatAppearance.BorderSize = 0;
-            this.btnModificarAlimento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.btnModificarAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnModificarAlimento.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnModificarAlimento.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
-            this.btnModificarAlimento.IconColor = System.Drawing.Color.Black;
-            this.btnModificarAlimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.btnModificarAlimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnModificarAlimento.Location = new System.Drawing.Point(363, 23);
-            this.btnModificarAlimento.Margin = new System.Windows.Forms.Padding(0);
-            this.btnModificarAlimento.Name = "btnModificarAlimento";
-            this.btnModificarAlimento.Padding = new System.Windows.Forms.Padding(15, 8, 0, 0);
-            this.btnModificarAlimento.Size = new System.Drawing.Size(227, 52);
-            this.btnModificarAlimento.TabIndex = 15;
-            this.btnModificarAlimento.Text = "Modificar";
-            this.btnModificarAlimento.UseVisualStyleBackColor = false;
-            // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel3.Location = new System.Drawing.Point(363, 75);
-            this.panel3.Margin = new System.Windows.Forms.Padding(0);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(227, 5);
-            this.panel3.TabIndex = 16;
             // 
             // dgvTortilla
             // 
@@ -226,11 +139,11 @@
             this.Nombre.DataPropertyName = "Nombre";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
             this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Nombre.HeaderText = "Alimento";
+            this.Nombre.HeaderText = "Relleno";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 176;
+            this.Nombre.Width = 154;
             // 
             // Descripcion
             // 
@@ -250,6 +163,96 @@
             this.Precio.Name = "Precio";
             this.Precio.ReadOnly = true;
             this.Precio.Width = 135;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel2.Location = new System.Drawing.Point(65, 75);
+            this.panel2.Margin = new System.Windows.Forms.Padding(0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(227, 5);
+            this.panel2.TabIndex = 14;
+            // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel4.Location = new System.Drawing.Point(668, 75);
+            this.panel4.Margin = new System.Windows.Forms.Padding(0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(227, 5);
+            this.panel4.TabIndex = 18;
+            // 
+            // btnNuevoAlimento
+            // 
+            this.btnNuevoAlimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(62)))), ((int)(((byte)(50)))));
+            this.btnNuevoAlimento.FlatAppearance.BorderSize = 0;
+            this.btnNuevoAlimento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnNuevoAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnNuevoAlimento.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnNuevoAlimento.IconChar = FontAwesome.Sharp.IconChar.PlusSquare;
+            this.btnNuevoAlimento.IconColor = System.Drawing.Color.Black;
+            this.btnNuevoAlimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnNuevoAlimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnNuevoAlimento.Location = new System.Drawing.Point(65, 23);
+            this.btnNuevoAlimento.Margin = new System.Windows.Forms.Padding(0);
+            this.btnNuevoAlimento.Name = "btnNuevoAlimento";
+            this.btnNuevoAlimento.Padding = new System.Windows.Forms.Padding(15, 8, 0, 0);
+            this.btnNuevoAlimento.Size = new System.Drawing.Size(227, 52);
+            this.btnNuevoAlimento.TabIndex = 13;
+            this.btnNuevoAlimento.Text = "Nuevo";
+            this.btnNuevoAlimento.UseVisualStyleBackColor = false;
+            this.btnNuevoAlimento.Click += new System.EventHandler(this.btnNuevoAlimento_Click);
+            // 
+            // btnEliminarAlimento
+            // 
+            this.btnEliminarAlimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(62)))), ((int)(((byte)(50)))));
+            this.btnEliminarAlimento.FlatAppearance.BorderSize = 0;
+            this.btnEliminarAlimento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnEliminarAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEliminarAlimento.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminarAlimento.IconChar = FontAwesome.Sharp.IconChar.TrashAlt;
+            this.btnEliminarAlimento.IconColor = System.Drawing.Color.Black;
+            this.btnEliminarAlimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnEliminarAlimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEliminarAlimento.Location = new System.Drawing.Point(668, 23);
+            this.btnEliminarAlimento.Margin = new System.Windows.Forms.Padding(0);
+            this.btnEliminarAlimento.Name = "btnEliminarAlimento";
+            this.btnEliminarAlimento.Padding = new System.Windows.Forms.Padding(15, 8, 0, 0);
+            this.btnEliminarAlimento.Size = new System.Drawing.Size(227, 52);
+            this.btnEliminarAlimento.TabIndex = 17;
+            this.btnEliminarAlimento.Text = "Eliminar";
+            this.btnEliminarAlimento.UseVisualStyleBackColor = false;
+            this.btnEliminarAlimento.Click += new System.EventHandler(this.btnEliminarAlimento_Click);
+            // 
+            // btnModificarAlimento
+            // 
+            this.btnModificarAlimento.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(62)))), ((int)(((byte)(50)))));
+            this.btnModificarAlimento.FlatAppearance.BorderSize = 0;
+            this.btnModificarAlimento.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.btnModificarAlimento.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificarAlimento.Font = new System.Drawing.Font("Maiandra GD", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificarAlimento.IconChar = FontAwesome.Sharp.IconChar.PenToSquare;
+            this.btnModificarAlimento.IconColor = System.Drawing.Color.Black;
+            this.btnModificarAlimento.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.btnModificarAlimento.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnModificarAlimento.Location = new System.Drawing.Point(363, 23);
+            this.btnModificarAlimento.Margin = new System.Windows.Forms.Padding(0);
+            this.btnModificarAlimento.Name = "btnModificarAlimento";
+            this.btnModificarAlimento.Padding = new System.Windows.Forms.Padding(15, 8, 0, 0);
+            this.btnModificarAlimento.Size = new System.Drawing.Size(227, 52);
+            this.btnModificarAlimento.TabIndex = 15;
+            this.btnModificarAlimento.Text = "Modificar";
+            this.btnModificarAlimento.UseVisualStyleBackColor = false;
+            this.btnModificarAlimento.Click += new System.EventHandler(this.btnModificarAlimento_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.panel3.Location = new System.Drawing.Point(363, 75);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(227, 5);
+            this.panel3.TabIndex = 16;
             // 
             // FrmIngredientes
             // 

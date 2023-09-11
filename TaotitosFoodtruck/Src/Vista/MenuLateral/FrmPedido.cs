@@ -9,12 +9,14 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using TaotitosFoodtruck.Src.Vista.TomarPedido;
 using TaotitosFoodtruck.Src.Controladora;
+using TaotitosFoodtruck.Src.Modelo;
 
 namespace TaotitosFoodtruck.Src.Vista.MenuLateral
 {
     public partial class FrmPedido : Form
     {
-        ControladoraFrm controladoraFrm = ControladoraFrm.GetInstance();
+        private ControladoraFrm controladoraFrm = ControladoraFrm.GetInstance();
+        private ControladoraPedido controladoraPedido = ControladoraPedido.getInstancia();
         private static FrmPedido instancia;
 
         
@@ -30,12 +32,16 @@ namespace TaotitosFoodtruck.Src.Vista.MenuLateral
         private FrmPedido()
         {
             InitializeComponent();
-
         }
 
         private void btnNuevaSalsa_Click_1(object sender, EventArgs e)
         {
             controladoraFrm.AbriFormHijo(FrmPedidoTortillo.GetInstancia());
+        }
+
+        private void FrmPedido_Load(object sender, EventArgs e)
+        {
+            controladoraPedido.ActualizarPedidos(dgvSalsa);    
         }
     }
 }

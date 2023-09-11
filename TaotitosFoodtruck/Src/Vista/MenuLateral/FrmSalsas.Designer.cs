@@ -72,6 +72,7 @@
             this.btnNuevaSalsa.TabIndex = 1;
             this.btnNuevaSalsa.Text = "Nuevo";
             this.btnNuevaSalsa.UseVisualStyleBackColor = false;
+            this.btnNuevaSalsa.Click += new System.EventHandler(this.btnNuevaSalsa_Click);
             // 
             // panel2
             // 
@@ -110,6 +111,7 @@
             this.btnModificarSalsa.TabIndex = 3;
             this.btnModificarSalsa.Text = "Modificar";
             this.btnModificarSalsa.UseVisualStyleBackColor = false;
+            this.btnModificarSalsa.Click += new System.EventHandler(this.btnModificarSalsa_Click);
             // 
             // panel4
             // 
@@ -139,6 +141,7 @@
             this.btnEliminarSalsa.TabIndex = 5;
             this.btnEliminarSalsa.Text = "Eliminar";
             this.btnEliminarSalsa.UseVisualStyleBackColor = false;
+            this.btnEliminarSalsa.Click += new System.EventHandler(this.btnEliminarSalsa_Click);
             // 
             // splitContainer1
             // 

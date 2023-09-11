@@ -23,3 +23,4 @@ C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\T
 C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.TomarPedido.FrmPedidoIngrediente.resources
 C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.TomarPedido.FrmPedidoTortillo.resources
 C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.TomarPedido.FrmPedidoSalsa.resources
+C:\Users\ALAN\Desktop\Segundo año\Analisis de Sistemas\Final_Analisis_Sitemas\TaotitosFoodtruck\TaotitosFoodtruck\obj\Debug\TaotitosFoodtruck.Src.Vista.FrmCrearIngrediente.resources

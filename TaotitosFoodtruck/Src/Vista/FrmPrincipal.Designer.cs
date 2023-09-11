@@ -147,16 +147,16 @@
             // panelLateral
             // 
             this.panelLateral.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(13)))), ((int)(((byte)(17)))), ((int)(((byte)(23)))));
+            this.panelLateral.Controls.Add(this.btnTortillas);
+            this.panelLateral.Controls.Add(this.panel4);
             this.panelLateral.Controls.Add(this.btnDelivery);
             this.panelLateral.Controls.Add(this.btnPedidos);
             this.panelLateral.Controls.Add(this.btnSalsa);
             this.panelLateral.Controls.Add(this.panel2);
-            this.panelLateral.Controls.Add(this.btnTortillas);
             this.panelLateral.Controls.Add(this.panel6);
             this.panelLateral.Controls.Add(this.btnIngredientes);
             this.panelLateral.Controls.Add(this.panel5);
             this.panelLateral.Controls.Add(this.btnClientes);
-            this.panelLateral.Controls.Add(this.panel4);
             this.panelLateral.Controls.Add(this.panel3);
             this.panelLateral.Controls.Add(this.panel1);
             this.panelLateral.Controls.Add(this.panelLateralUp);
@@ -244,7 +244,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel2.Location = new System.Drawing.Point(0, 294);
+            this.panel2.Location = new System.Drawing.Point(0, 354);
             this.panel2.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(5, 55);
@@ -265,7 +265,7 @@
             this.btnTortillas.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnTortillas.IconSize = 42;
             this.btnTortillas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTortillas.Location = new System.Drawing.Point(5, 354);
+            this.btnTortillas.Location = new System.Drawing.Point(5, 294);
             this.btnTortillas.Margin = new System.Windows.Forms.Padding(0);
             this.btnTortillas.Name = "btnTortillas";
             this.btnTortillas.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
@@ -299,13 +299,13 @@
             this.btnIngredientes.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.btnIngredientes.IconSize = 42;
             this.btnIngredientes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnIngredientes.Location = new System.Drawing.Point(5, 294);
+            this.btnIngredientes.Location = new System.Drawing.Point(5, 354);
             this.btnIngredientes.Margin = new System.Windows.Forms.Padding(0);
             this.btnIngredientes.Name = "btnIngredientes";
             this.btnIngredientes.Padding = new System.Windows.Forms.Padding(13, 0, 0, 0);
             this.btnIngredientes.Size = new System.Drawing.Size(234, 55);
             this.btnIngredientes.TabIndex = 4;
-            this.btnIngredientes.Text = "Ingredientes";
+            this.btnIngredientes.Text = "Relleno";
             this.btnIngredientes.UseVisualStyleBackColor = false;
             this.btnIngredientes.Click += new System.EventHandler(this.btnIngredientes_Click);
             // 
@@ -345,7 +345,7 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.panel4.Location = new System.Drawing.Point(0, 354);
+            this.panel4.Location = new System.Drawing.Point(0, 294);
             this.panel4.Margin = new System.Windows.Forms.Padding(0, 5, 0, 0);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(5, 55);
@@ -417,7 +417,7 @@
             this.PanelPrincipal.Name = "PanelPrincipal";
             this.PanelPrincipal.Size = new System.Drawing.Size(961, 650);
             this.PanelPrincipal.TabIndex = 2;
-          // 
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;

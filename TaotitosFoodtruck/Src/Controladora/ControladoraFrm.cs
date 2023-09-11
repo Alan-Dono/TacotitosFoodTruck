@@ -5,6 +5,9 @@ using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Windows.Input;
+using TaotitosFoodtruck.Src.Interfaces;
+using TaotitosFoodtruck.Src.Modelo;
 using TaotitosFoodtruck.Src.Vista;
 using TaotitosFoodtruck.Src.Vista.TomarPedido;
 
@@ -14,18 +17,10 @@ namespace TaotitosFoodtruck.Src.Controladora
     public class ControladoraFrm
     {
         #region AtributosFormularios
-        //private FrmPrincipal principal = FrmPrincipal.GetInstance();
         private Panel panel1;
-        private FrmTortillas tortillas = FrmTortillas.GetInstancia();
-        private FrmIngredientes ingredientes = FrmIngredientes.GetInstancia();
-        private FrmSalsas salsas = FrmSalsas.GetInstancia();
-        private FrmHome home = FrmHome.GetInstancia();
-        private FrmPedidoTortillo pedidoTortillo;
-        private FrmPedidoIngrediente pedidoIngrediente;
-        private FrmPedidoSalsa pedidoSalsa;
         #endregion
         private static ControladoraFrm Instance;
-        private ControladoraFrm() { }
+        private ControladoraFrm(){}
         public static ControladoraFrm GetInstance()
         {
             if (Instance == null)
@@ -60,6 +55,33 @@ namespace TaotitosFoodtruck.Src.Controladora
             panel1.Tag = FrmHijo;
             FrmHijo.Show();
         }
+
+        public void AbrirIngredienteCrud(string tipoIngrediente, int id, IFrmEnviable formulario)
+        {
+            using (FrmCrearIngrediente form = FrmCrearIngrediente.GetInstancia(tipoIngrediente, id))
+            {
+                //FrmCrearIngrediente form = FrmCrearIngrediente.GetInstancia(tipoIngrediente, id);
+                form.FormClosed += (sender, e) =>
+                {
+                    formulario.FrmClosed(); // Llama al método FormCerrado cuando se cierre el formulario
+                };
+                form.BringToFront();
+                form.ShowDialog();
+            }
+        }
+        public void AbrirIngredienteCrud(string tipoIngrediente, Ingrediente ing, IFrmEnviable formulario)
+        {
+            using (FrmCrearIngrediente form = FrmCrearIngrediente.GetInstancia(tipoIngrediente, ing, formulario))
+            {
+                form.FormClosed += (sender, e) =>
+                {
+                    formulario.FrmClosed(); // Llama al método FormCerrado cuando se cierre el formulario
+                };
+                form.BringToFront();
+                form.ShowDialog();
+            }
+        }
+
 
 
     }

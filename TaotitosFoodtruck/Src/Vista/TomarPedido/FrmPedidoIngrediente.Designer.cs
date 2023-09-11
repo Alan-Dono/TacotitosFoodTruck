@@ -121,6 +121,7 @@
             this.dgvTortilla.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvTortilla.Size = new System.Drawing.Size(961, 543);
             this.dgvTortilla.TabIndex = 3;
+            this.dgvTortilla.SelectionChanged += new System.EventHandler(this.dgvTortilla_SelectionChanged_1);
             // 
             // ID
             // 
@@ -138,11 +139,11 @@
             this.Nombre.DataPropertyName = "Nombre";
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.Aqua;
             this.Nombre.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Nombre.HeaderText = "Alimento";
+            this.Nombre.HeaderText = "Relleno";
             this.Nombre.MinimumWidth = 6;
             this.Nombre.Name = "Nombre";
             this.Nombre.ReadOnly = true;
-            this.Nombre.Width = 176;
+            this.Nombre.Width = 154;
             // 
             // Descripcion
             // 
@@ -198,11 +199,13 @@
             this.pbSalsa.Cursor = System.Windows.Forms.Cursors.WaitCursor;
             this.pbSalsa.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             this.pbSalsa.Location = new System.Drawing.Point(49, 38);
+            this.pbSalsa.Maximum = 75;
             this.pbSalsa.Name = "pbSalsa";
-            this.pbSalsa.Size = new System.Drawing.Size(625, 23);
-            this.pbSalsa.Step = 50;
+            this.pbSalsa.Size = new System.Drawing.Size(495, 23);
+            this.pbSalsa.Step = 25;
             this.pbSalsa.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
             this.pbSalsa.TabIndex = 16;
+            this.pbSalsa.Value = 25;
             // 
             // panel2
             // 
@@ -247,6 +250,7 @@
             this.Margin = new System.Windows.Forms.Padding(6, 7, 6, 7);
             this.Name = "FrmPedidoIngrediente";
             this.Text = "FrmPedidoIngrediente";
+            this.Load += new System.EventHandler(this.FrmPedidoIngrediente_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -260,14 +264,14 @@
 
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dgvTortilla;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
         private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconButton btnAlimentoAtras;
         private System.Windows.Forms.ProgressBar pbSalsa;
         private System.Windows.Forms.Panel panel2;
         private FontAwesome.Sharp.IconButton btnAlimentoSiguiente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Nombre;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
     }
 }

@@ -205,6 +205,7 @@
             this.btnNuevaTortilla.TabIndex = 7;
             this.btnNuevaTortilla.Text = "Nuevo";
             this.btnNuevaTortilla.UseVisualStyleBackColor = false;
+            this.btnNuevaTortilla.Click += new System.EventHandler(this.btnNuevaTortilla_Click);
             // 
             // btnEliminarTortilla
             // 
@@ -225,6 +226,7 @@
             this.btnEliminarTortilla.TabIndex = 11;
             this.btnEliminarTortilla.Text = "Eliminar";
             this.btnEliminarTortilla.UseVisualStyleBackColor = false;
+            this.btnEliminarTortilla.Click += new System.EventHandler(this.btnEliminarTortilla_Click);
             // 
             // btnModificarTortilla
             // 
@@ -245,6 +247,7 @@
             this.btnModificarTortilla.TabIndex = 9;
             this.btnModificarTortilla.Text = "Modificar";
             this.btnModificarTortilla.UseVisualStyleBackColor = false;
+            this.btnModificarTortilla.Click += new System.EventHandler(this.btnModificarTortilla_Click);
             // 
             // panel3
             // 
